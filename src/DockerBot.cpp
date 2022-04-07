@@ -377,11 +377,16 @@ void DockerBot::startBot(void)
 
 	int pid = fork();
 	if(pid == 0) {
+		std::string fullScriptPath = config::BOT_LAUNCHER_DIR;
+		fullScriptPath.append(m_bot.getLang());
+		fullScriptPath.append(config::BOT_LAUNCHER_SCRIPT);
+
 		// child process
-		execl(config::BOT_LAUNCHER_SCRIPT, config::BOT_LAUNCHER_SCRIPT,
+		execl(fullScriptPath.c_str(), fullScriptPath.c_str(),
 				dbVersionStr.c_str(), m_cleanName.c_str(),
 				m_dockerContainerName.c_str(), (char*)NULL);
 
+		std::cout << fullScriptPath << std::endl;
 		// we only get here if execl failed
 		std::cerr << logPrefix() << "execl() failed: " << strerror(errno) << std::endl;
 		exit(99);

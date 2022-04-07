@@ -51,14 +51,14 @@ set(sources
 	src/Environment.h
 	src/Database.h src/Database.cpp
 	src/Stopwatch.h src/Stopwatch.cpp
-	docker4bots/spn_cpp_base/spn_cpp_framework/src/ipc_format.h
+	docker4bots/cpp/spn_cpp_base/spn_cpp_framework/src/ipc_format.h
 )
 
 include_directories(
 	${CMAKE_PROJECT_NAME}
 	lib/msgpack-c/include/
 	lib/TcpServer/TcpServer/include/
-	docker4bots/spn_cpp_base/spn_cpp_framework/src/
+	docker4bots/cpp/spn_cpp_base/spn_cpp_framework/src/
 
 	/usr/include/jdbc/  # FIXME: autodetect
 	)

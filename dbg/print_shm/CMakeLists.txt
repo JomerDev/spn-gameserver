@@ -7,13 +7,13 @@ include_directories(src)
 
 # put all .cpp and .h files into the sources variable
 set(sources
-	../../docker4bots/spn_cpp_base/spn_cpp_framework/src/ipc_format.h
+	../../docker4bots/cpp/spn_cpp_base/spn_cpp_framework/src/ipc_format.h
 	src/main.cpp
 )
 
 include_directories(
 	${CMAKE_PROJECT_NAME}
-	../../docker4bots/spn_cpp_base/spn_cpp_framework/src/
+	../../docker4bots/cpp/spn_cpp_base/spn_cpp_framework/src/
 	)
 
 add_executable(

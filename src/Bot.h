@@ -107,6 +107,7 @@ class Bot : public IdentifyableObject
 
 		std::shared_ptr<Snake> getSnake(void) const { return m_snake; }
 		const std::string &getName(void) const { return m_dbData->bot_name; }
+		const std::string &getLang(void) const { return m_dbData->prog_lang; }
 		real_t getHeading() { return m_snake->getHeading(); }
 		Field* getField() { return m_field; }
 		int getDatabaseId() { return m_dbData->bot_id; }
